@@ -6,7 +6,7 @@ int main(){
     cin>>n; //declaring array elements
     int a[n];
     int i ; 
-    //taking inpit in the array
+    //taking input in the array
     for( i = 0;i  < n ; i ++){
         cin>>a[i];
     }
