@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+//==========FUNCTION STARTS==============
+
+
+
+
+
+//==========FUNCTION ENDS==============
+
+int main(){
+#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+#endif	
+//===========CODE STARTS=================
+
+int n;
+cin>>n;
+int a[n];
+int i ; 
+for(i = 0 ; i < n ; i++){
+	cin>>a[i];
+}
+int key;
+cin>>key;
+
+auto it = find(a,a+n,key);
+int index = it - a;
+if ( index == n ){
+	cout<<"Element not present!"<<endl;
+}
+else{
+	cout<<key<<" is present in "<<index<<" having adress "<<it<<endl;
+}
+
+
+
+
+
+
+
+//===========CODE ENDS=================
+	return 0;	
+}
+

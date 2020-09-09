@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+//==========FUNCTION STARTS==============
+
+
+
+
+
+//==========FUNCTION ENDS==============
+
+int main(){
+#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+#endif	
+//===========CODE STARTS=================
+int n ;
+cin>>n;
+int a[n];
+int i ; 
+ for( i = 0 ; i < n ; i++){
+ 	cin>>a[i];
+ }
+ int key;
+ cin>>key;
+ bool present = binary_search(a,a+n ,key);
+ if (present){
+ 	cout<<"Element is present";
+ }
+ else{
+ 	cout<<"Element is absent!";
+ }
+
+cout<<endl;
+auto lb = lower_bound(a,a+n,2); //give first element which is greater or equal to key
+cout<<"Lower bound of 2 is " <<(lb-a)<<endl;
+
+auto ub = upper_bound(a,a+n,2); //give first element which is strictly greater than key
+cout<<"Upper bound of 2 is " <<(ub-a)<<endl;
+
+
+cout<<"Frequency of occurence : "<<ub-lb<<endl;
+
+//===========CODE ENDS=================
+	return 0;	
+}
+
