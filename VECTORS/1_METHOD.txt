@@ -1,0 +1,75 @@
+#include<bits/stdc++.h> 
+#include<vector> 
+using namespace std;
+//==========FUNCTION STARTS==============
+
+//==========FUNCTION ENDS==============
+int main(){
+#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+#endif	
+//===========CODE STARTS=================
+
+
+
+vector<int> d{1,2,3,10,14};
+d.push_back(16); //push back O(1) most of the time
+
+d.pop_back(); //pop back , rrmoves the last element
+
+d.insert(d.begin()+3,4,100); //insert at any position O(n)
+
+d.erase(d.begin()+2);
+d.erase(d.begin()+2,d.begin()+5);
+
+cout<<d.size()<<endl;
+cout<<d.capacity()<<endl;
+
+//we avoid the shrink operation
+d.resize(18); //if size is increasing than more memory would be allocated
+cout<<d.capacity()<<endl;
+
+
+d.clear();//removes all the element but, doesnot deletes the memory occupied
+cout<<d.size()<<endl;
+
+if(d.empty()){
+	cout<<"This is an empty vector"<<endl;
+}
+
+
+d.push_back(10);
+d.push_back(11);
+d.push_back(12);
+cout<<d.front()<<endl<<d.back()<<endl;
+
+//reserve
+int n ; 
+cin>>n;
+vector<int> v;
+v.reserve(1000);
+for( int i = 0 ; i < n ; i++){
+	int no;
+	cin>>no;
+	v.push_back(no);
+	cout<<"Capacity: "<<v.capacity()<<endl; //TIME TAKING OP WITHOUT V.RESERVE()
+}
+cout<<"Capacity: "<<v.capacity()<<endl;
+
+for( auto x : v){
+	cout<<x<<" ";
+}
+
+for( auto x : d){
+	cout<<x<<" ";
+}
+
+
+
+
+//===========CODE ENDS=================
+	return 0;	
+
+
+}
