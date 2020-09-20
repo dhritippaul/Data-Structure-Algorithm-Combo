@@ -1,0 +1,13 @@
+Arrays
+Vector (Dynamic Array)
+
+More Data Structures
+---------------------
+- Linked List
+- Stack
+- Queue
+-Tree(Binary + BST)
+-Heaps(Priority Queue)
+-Graph
+-Hashtables
+-Tries
