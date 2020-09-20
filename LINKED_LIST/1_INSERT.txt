@@ -1,0 +1,63 @@
+#include<bits/stdc++.h> 
+#include<vector> 
+using namespace std;
+//========================
+
+class node{
+	public:
+		int data;
+		node*next;
+
+		node(int d){
+			data = d;
+			next = NULL;
+		}
+};
+
+
+//passing a apointer by reference
+void insertAtHead(node*&head,int d){ //by refernece
+	if(head==NULL){
+		head = new node(d);
+		return ; 
+	}
+
+	node*n = new node(d);
+	n->next = head;
+	head = n ;
+}
+
+void print(node*head){ //by value
+	while(head!=NULL){
+		cout<<head->data<<" ->";
+		head = head->next;
+
+	}
+}
+
+
+
+
+//========================
+int main(){
+#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+#endif	
+//===========MAIN STARTS=================
+
+node*head = NULL;
+insertAtHead(head,3);
+insertAtHead(head,2);
+insertAtHead(head,1);
+insertAtHead(head,0);
+
+print(head);
+print(head);
+
+//===========MAIN ENDS=================
+	return 0;	
+
+
+}
+
