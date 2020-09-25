@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>  
+using namespace std;
+
+
+int main(){
+#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+#endif	
+
+int m = 2 , n =6;
+int x = m++; cout<<"x"<<x<<endl;
+int y = n++; cout<<"Y"<<y<<endl;
+m = x++;	 cout<<"m"<<m<<endl;
+x = m++;	 cout<<"x"<<x<<endl;
+n = y++;	 cout<<"n"<<n<<endl;
+y = n++;	 cout<<"y"<<y<<endl;
+cout<<m<<" " <<n;
+
+return  0;
+
+}
+
+
+// x2
+// Y6
+// m2
+// x2
+// n6
+// y6
+// 3 7
