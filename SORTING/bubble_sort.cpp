@@ -1,36 +1,37 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include<stdio.h>
+#include<stdlib.h>
 
-void bubble_sort(int a[],int n){
-
-	for( int itr = 1;itr <= n-1;itr++){
-		for( int j = 0; j<=(n-itr-1);j++)
-		{
-			if (a[j]>a[j+1]){
-			swap(a[j],a[j+1]);
-	    	}
-		}
-	}
+void swap(int *x,int*y)
+{
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
 }
 
 int main(){
-	int n;
-	int a[1000];
-	
-	cout<<"Enter the length of the array : "<<"\n";
-	cin>>n;
-	
-	cout<<"Enter the elements in the array : "<<"\n";
-	for(int i =0; i<n ; i++){
-		cin>>a[i];
-	}
-	
-    bubble_sort(a,n);
-	cout<<"Elements after bubble sort are: "<<"\n";
-	for(int i = 0 ; i< n ; i++){
-		cout<<a[i]<<" ";
-	}
-	
-	return 0 ;
-	
+
+   int count, temp, i, j;
+   int *arr; //array pointer
+   printf("How many numbers are u going to enter?: ");
+   scanf("%d",&count);
+   arr = (int*)malloc(count*sizeof(int)); //dynamic allocation
+   printf("Enter %d numbers: ",count);
+   for(i=0;i<count;i++)
+   	scanf("%d",(arr+i));
+
+   for(i=0;i<count;i++){
+      for(j=0;j<count-i-1;j++){
+        if(*(arr+j)>*(arr+j+1)){
+        	swap((arr+j),(arr+j+1)); //swap function
+        }
+      }
+   }
+
+   printf("Sorted elements: ");
+   printf("{");
+   for(i=0;i<count;i++) //printing array
+      printf(" %d",*(arr+i));
+   printf(" }");
+   return 0;
 }
